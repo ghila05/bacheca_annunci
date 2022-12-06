@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace bacheca_annunci
 {
-    class Annuncio
+    public class Annuncio
     {
         private int _id;
         private string _text;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace bacheca_annunci
 {
-    class Bacheca
+    public class Bacheca
     {
         private string _id;
         private const int MAXann = 999;
@@ -34,7 +34,10 @@ namespace bacheca_annunci
             }
         }
 
+        public Bacheca()
+        {
 
+        }
 
         public Bacheca(string id)
         {
