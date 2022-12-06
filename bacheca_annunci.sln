@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31727.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bacheca_annunci", "bacheca_annunci\bacheca_annunci.csproj", "{6245A587-838C-472E-90B4-2637DD266FC9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6245A587-838C-472E-90B4-2637DD266FC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6245A587-838C-472E-90B4-2637DD266FC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6245A587-838C-472E-90B4-2637DD266FC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6245A587-838C-472E-90B4-2637DD266FC9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C5A08C76-B116-4A9E-B6FA-96B919D1C10A}
+	EndGlobalSection
+EndGlobal
