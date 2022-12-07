@@ -61,5 +61,13 @@ namespace bacheca_annunci
 
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int prova = listView1.FocusedItem.Index;
+            MessageBox.Show(Convert.ToString(prova));
+            listView1.Items.Remove(listView1.SelectedItems[prova]);
+        
+        }
     }
 }
