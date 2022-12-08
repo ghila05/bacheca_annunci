@@ -21,7 +21,7 @@ namespace bacheca_annunci
             }
             private set
             {
-                if (value != 0)
+                if (value >= 0)
                 {
                     _id = value;
                 }

@@ -19,7 +19,8 @@ namespace bacheca_annunci
 
         public Bacheca b;
         public Annuncio a;
-        public int count=1;
+        
+        public int count=0;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -40,7 +41,7 @@ namespace bacheca_annunci
             listView1.Items.Add(Convert.ToString(v.Id));
             listView1.Items[listView1.Items.Count - 1].SubItems.Add(v.Text);
             listView1.Items[listView1.Items.Count - 1].SubItems.Add(v.Data);
-            listView1.Items[listView1.Items.Count - 1].SubItems.Add(Convert.ToString(v.Prezzo)+"€");
+            listView1.Items[listView1.Items.Count - 1].SubItems.Add(Convert.ToString(v.Prezzo));
 
         }
         public void Clear()
@@ -50,7 +51,8 @@ namespace bacheca_annunci
             textBox3.Clear();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void button1_Click(object sender, EventArgs e)// aggiungi
         {
 
             a = new Annuncio(count, textBox1.Text, textBox2.Text, Convert.ToInt32(textBox3.Text));
@@ -58,16 +60,36 @@ namespace bacheca_annunci
             riempi(a);
             count++;
             Clear();
+            label5.Text = ("Prezzo tot: "+Convert.ToString(b.Costotot()));
 
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) //elimina
         {
+
             int prova = listView1.FocusedItem.Index;
             MessageBox.Show(Convert.ToString(prova));
-            listView1.Items.Remove(listView1.SelectedItems[prova]);
-        
+            listView1.Items.Remove(listView1.SelectedItems[0]);
+            b.Remove(prova);
+            label5.Text = ("Prezzo tot: " + Convert.ToString(b.Costotot()));
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                textBox1.Text = listView1.SelectedItems[0].SubItems[1].Text;
+                textBox2.Text = listView1.SelectedItems[0].SubItems[2].Text;
+                textBox3.Text = listView1.SelectedItems[0].SubItems[3].Text;
+
+            }
+  
         }
     }
 }

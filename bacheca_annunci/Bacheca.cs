@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace bacheca_annunci
 {
@@ -76,24 +77,25 @@ namespace bacheca_annunci
             }
         }
 
-
-        public void Elimina(Annuncio e)
+        public int Remove(int p)
         {
-            if (e != null)
+            if (p != -1)
             {
-                for ( int i=0; i < lung; i++)
-                {
-                    if (ann[i].Id == e.Id)
-                    {
-                        ann[i] = null;
-                    }
-                }
+                for (int i = p; i < ann.Length - 1; i++)
+                    ann[i] = ann[i + 1];
+
+                ann[ann.Length - 1] = null;
+
+                lung--;
+
+                return p;
             }
             else
-            {
-                throw new Exception("inserire annuncio valido");
-            }
+                throw new Exception("Product not found");
         }
+
+
+
 
         public void OrdinaP()
         {
@@ -124,6 +126,15 @@ namespace bacheca_annunci
             return tot;
 
         }
+
+        public void visualizza()
+        {
+            for (int i=0; i < lung; i++)
+            {
+                MessageBox.Show(ann[i].Text);
+            }
+        }
+ 
 
     }
 }
