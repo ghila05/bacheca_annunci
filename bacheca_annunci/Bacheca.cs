@@ -35,6 +35,13 @@ namespace bacheca_annunci
             }
         }
 
+        public int Max
+        {
+            get {
+                return MAXann;
+            }
+        }
+
         public Bacheca()
         {
 
@@ -133,6 +140,12 @@ namespace bacheca_annunci
             {
                 MessageBox.Show(ann[i].Text);
             }
+        }
+
+        public Annuncio[] prodotti()
+        {
+            return ann;
+
         }
  
 

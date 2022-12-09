@@ -50,6 +50,14 @@ namespace bacheca_annunci
             textBox2.Clear();
             textBox3.Clear();
         }
+        public void Eliminaitem()
+        {
+            for (int i = 0; i < count; i++)
+            {
+                listView1.Items.Remove(listView1.Items[0]);
+            }
+
+        }
 
 
         private void button1_Click(object sender, EventArgs e)// aggiungi
@@ -73,6 +81,7 @@ namespace bacheca_annunci
             listView1.Items.Remove(listView1.SelectedItems[0]);
             b.Remove(prova);
             label5.Text = ("Prezzo tot: " + Convert.ToString(b.Costotot()));
+            count--;
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -92,7 +101,7 @@ namespace bacheca_annunci
   
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) //modifica
         {
             int prova = listView1.FocusedItem.Index;
             m = new Annuncio(prova, textBox1.Text, textBox2.Text, Convert.ToInt32(textBox3.Text));
@@ -106,6 +115,20 @@ namespace bacheca_annunci
             }
             label5.Text = ("Prezzo tot: " + Convert.ToString(b.Costotot()));
             Clear();
+        }
+
+
+
+        private void button4_Click(object sender, EventArgs e)// ordina prezzo crescente
+        {
+            Annuncio[] a = new Annuncio[999];
+            Eliminaitem();
+            b.OrdinaP();
+            a = b.prodotti();
+            for (int i=0; i< count; i++)
+            {
+                riempi(a[i]);
+            }
         }
     }
 }

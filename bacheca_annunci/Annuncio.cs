@@ -45,6 +45,10 @@ namespace bacheca_annunci
                 {
                     _text = value;
                 }
+                else
+                {
+                    throw new Exception("invalid text");
+                }
             }
         }
 
@@ -56,9 +60,13 @@ namespace bacheca_annunci
             }
             set
             {
-                if (_data != "")
+                if (value != "")
                 {
                     _data = value;
+                }
+                else
+                {
+                    throw new Exception("invalid data");
                 }
             }
         }
