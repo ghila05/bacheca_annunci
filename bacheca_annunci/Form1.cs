@@ -19,7 +19,7 @@ namespace bacheca_annunci
 
         public Bacheca b;
         public Annuncio a;
-        
+        public Annuncio m;
         public int count=0;
 
         private void Form1_Load(object sender, EventArgs e)
@@ -90,6 +90,22 @@ namespace bacheca_annunci
 
             }
   
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int prova = listView1.FocusedItem.Index;
+            m = new Annuncio(prova, textBox1.Text, textBox2.Text, Convert.ToInt32(textBox3.Text));
+            b.Modifica(m);
+            if (listView1.SelectedItems.Count > 0)
+            {
+                listView1.SelectedItems[0].SubItems[1].Text = m.Text;
+                listView1.SelectedItems[0].SubItems[2].Text = m.Data;
+                listView1.SelectedItems[0].SubItems[3].Text = Convert.ToString(m.Prezzo);
+
+            }
+            label5.Text = ("Prezzo tot: " + Convert.ToString(b.Costotot()));
+            Clear();
         }
     }
 }
