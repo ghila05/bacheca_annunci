@@ -62,7 +62,6 @@ namespace bacheca_annunci
 
         private void button1_Click(object sender, EventArgs e)// aggiungi
         {
-
             a = new Annuncio(count, textBox1.Text, textBox2.Text, Convert.ToInt32(textBox3.Text));
             b.Aggiungi(a);
             riempi(a);
@@ -81,7 +80,7 @@ namespace bacheca_annunci
             listView1.Items.Remove(listView1.SelectedItems[0]);
             b.Remove(prova);
             label5.Text = ("Prezzo tot: " + Convert.ToString(b.Costotot()));
-            count--;
+            Clear();
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -124,7 +123,8 @@ namespace bacheca_annunci
             Annuncio[] a = new Annuncio[999];
             Eliminaitem();
             b.OrdinaP();
-            a = b.prodotti();
+            a = b.prodotti(); // passa l'array ma il text e' sbagliato
+
             for (int i=0; i< count; i++)
             {
                 riempi(a[i]);
