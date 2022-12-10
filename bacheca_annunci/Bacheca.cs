@@ -77,6 +77,9 @@ namespace bacheca_annunci
                         ann[i] = n;
                     }
                 }
+
+                //MessageBox.Show(ann[0].Text);
+                //MessageBox.Show(ann[1].Text);
             }
             else
             {

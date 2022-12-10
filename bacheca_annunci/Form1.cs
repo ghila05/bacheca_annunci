@@ -102,8 +102,12 @@ namespace bacheca_annunci
 
         private void button3_Click(object sender, EventArgs e) //modifica
         {
-            int prova = listView1.FocusedItem.Index;
-            m = new Annuncio(prova, textBox1.Text, textBox2.Text, Convert.ToInt32(textBox3.Text));
+            string gino = listView1.SelectedItems[0].SubItems[0].Text; 
+            //MessageBox.Show(gino);
+
+            //MessageBox.Show(Convert.ToString(prova));
+            m = new Annuncio(Convert.ToInt32(gino), textBox1.Text, textBox2.Text, Convert.ToInt32(textBox3.Text));
+            //MessageBox.Show("id" + Convert.ToString(prova) + " text: " + m.Text+ " data: "+ m.Data+" prezzo: "+Convert.ToString(textBox3.Text));
             b.Modifica(m);
             if (listView1.SelectedItems.Count > 0)
             {
