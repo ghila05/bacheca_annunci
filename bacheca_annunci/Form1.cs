@@ -21,6 +21,7 @@ namespace bacheca_annunci
         public Annuncio a;
         public Annuncio m;
         public int count=0;
+        public int canc;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -52,7 +53,7 @@ namespace bacheca_annunci
         }
         public void Eliminaitem()
         {
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < canc; i++)
             {
                 listView1.Items.Remove(listView1.Items[0]);
             }
@@ -68,7 +69,7 @@ namespace bacheca_annunci
             count++;
             Clear();
             label5.Text = ("Prezzo tot: "+Convert.ToString(b.Costotot()));
-
+            canc++;
 
         }
 
@@ -76,11 +77,13 @@ namespace bacheca_annunci
         {
 
             int prova = listView1.FocusedItem.Index;
+            string idd = listView1.SelectedItems[0].SubItems[0].Text;
             MessageBox.Show(Convert.ToString(prova));
             listView1.Items.Remove(listView1.SelectedItems[0]);
-            b.Remove(prova);
+            b.Remove(Convert.ToInt32(idd));
             label5.Text = ("Prezzo tot: " + Convert.ToString(b.Costotot()));
             Clear();
+            canc--;
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
